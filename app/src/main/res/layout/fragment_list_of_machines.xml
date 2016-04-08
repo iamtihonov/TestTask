@@ -7,8 +7,15 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="28sp"
+        android:visibility="gone"
         android:text="Список машин" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        style="@style/WrapContentStyle"/>
 </LinearLayout>
