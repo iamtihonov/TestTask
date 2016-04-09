@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/textModelName"
+        tools:text="Модель: Cadillac"
+        style="@style/TextViewStyle"/>
+
+    <TextView
+        android:id="@+id/textYear"
+        tools:text="Год: 1991"
+        style="@style/TextViewStyle"/>
+
+    <TextView
+        android:id="@+id/textColor"
+        tools:text="Цвет: black"
+        style="@style/TextViewStyle"/>
+
+    <TextView
+        android:id="@+id/textPrice"
+        tools:text="Цена: 5 000 долларов"
+        style="@style/TextViewStyle"/>
+</LinearLayout>

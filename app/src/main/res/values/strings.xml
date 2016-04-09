@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Тестовое приложение</string>
     <string name="action_settings">Settings</string>
+
+    <string name="car_model">Модель: %1$s</string>
+    <string name="car_year">Год: %1$s</string>
+    <string name="car_color">Цвет: %1$s</string>
+
+    <plurals name="car_price">
+        <item quantity="zero">Цена: %1$s долларов</item>
+        <item quantity="one">Цена: %1$s доллар</item>
+        <item quantity="two">Цена: %1$s доллара</item>
+        <item quantity="few">Цена: %1$s доллара</item>
+        <item quantity="many">Цена: %1$s долларов</item>
+        <item quantity="other">Цена: %1$s долларов</item>
+    </plurals>
 </resources>
