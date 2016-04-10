@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 import ua.company.testtask.Car;
 import ua.company.testtask.R;
-import ua.company.testtask.SpaceItemDecoration;
+import ua.company.testtask.custom.SpaceItemDecoration;
 import ua.company.testtask.adapters.CarsAdapter;
 import ua.company.testtask.loaders.MachinesLoader;
 

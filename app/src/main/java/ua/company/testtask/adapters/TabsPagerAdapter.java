@@ -1,10 +1,11 @@
-package ua.company.testtask;
+package ua.company.testtask.adapters;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import ua.company.testtask.R;
 import ua.company.testtask.fragments.DrawingFragment;
 import ua.company.testtask.fragments.ImagesFragment;
 import ua.company.testtask.fragments.ListOfMachinesFragment;
