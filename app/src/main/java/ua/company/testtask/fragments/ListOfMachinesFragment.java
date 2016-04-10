@@ -82,7 +82,6 @@ public class ListOfMachinesFragment extends Fragment
 
         if(mSavedRecyclerLayoutState != null) {
             mRecycleView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
-            mSavedRecyclerLayoutState = null;
         }
     }
 
