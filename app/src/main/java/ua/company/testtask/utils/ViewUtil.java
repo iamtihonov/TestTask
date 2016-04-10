@@ -25,8 +25,11 @@ public class ViewUtil {
 
         File[] files = targetDirector.listFiles();
         ArrayList<String> imagesUri = new ArrayList<>();
-        for (File file : files) {
-            imagesUri.add(file.getName());
+
+        if(files != null) {
+            for (File file : files) {
+                imagesUri.add(file.getName());
+            }
         }
 
         return imagesUri;
