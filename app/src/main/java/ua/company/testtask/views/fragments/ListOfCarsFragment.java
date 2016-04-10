@@ -1,4 +1,4 @@
-package ua.company.testtask.fragments;
+package ua.company.testtask.views.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -17,13 +17,13 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
-import ua.company.testtask.Car;
+import ua.company.testtask.data.Car;
 import ua.company.testtask.R;
-import ua.company.testtask.custom.SpaceItemDecoration;
-import ua.company.testtask.adapters.CarsAdapter;
-import ua.company.testtask.loaders.MachinesLoader;
+import ua.company.testtask.views.custom.SpaceItemDecoration;
+import ua.company.testtask.views.adapters.CarsAdapter;
+import ua.company.testtask.loaders.CarsLoader;
 
-public class ListOfMachinesFragment extends Fragment
+public class ListOfCarsFragment extends Fragment
         implements LoaderManager.LoaderCallbacks<ArrayList<Car>> {
     private static final String RECYCLE_VIEW_STATE_TAG = "recycle_view_state";
 
@@ -44,7 +44,7 @@ public class ListOfMachinesFragment extends Fragment
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_list_of_machines, container, false);
+        return inflater.inflate(R.layout.fragment_list_of_cars, container, false);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class ListOfMachinesFragment extends Fragment
     @Override
     public Loader<ArrayList<Car>> onCreateLoader(int id, Bundle args) {
         changeVisibilityList(false);
-        return new MachinesLoader(mActivity);
+        return new CarsLoader(mActivity);
     }
 
     @Override

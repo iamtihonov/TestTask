@@ -1,4 +1,4 @@
-package ua.company.testtask;
+package ua.company.testtask.data;
 
 public class Car {
     private String mModelName;

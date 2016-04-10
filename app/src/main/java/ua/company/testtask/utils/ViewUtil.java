@@ -1,4 +1,4 @@
-package ua.company.testtask;
+package ua.company.testtask.utils;
 
 import android.content.Context;
 import android.graphics.Point;

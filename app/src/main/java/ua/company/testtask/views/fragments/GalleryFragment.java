@@ -1,4 +1,4 @@
-package ua.company.testtask.fragments;
+package ua.company.testtask.views.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,9 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import ua.company.testtask.ViewUtil;
+import ua.company.testtask.utils.ViewUtil;
 import ua.company.testtask.R;
-import ua.company.testtask.adapters.ImageAdapter;
+
+import ua.company.testtask.views.adapters.GalleryAdapter;
 
 public class GalleryFragment extends Fragment {
     private String mImagesFolderAbsolutePath;
@@ -35,7 +36,7 @@ public class GalleryFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) fragmentView.findViewById(R.id.recyclerViewImages);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new ImageAdapter(getActivity(), ViewUtil.getTestImagesName()));
+        recyclerView.setAdapter(new GalleryAdapter(getActivity(), ViewUtil.getTestImagesName()));
     }
 
     @Override

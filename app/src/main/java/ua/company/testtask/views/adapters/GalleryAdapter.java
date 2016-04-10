@@ -1,4 +1,4 @@
-package ua.company.testtask.adapters;
+package ua.company.testtask.views.adapters;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -14,15 +14,15 @@ import java.io.File;
 import java.util.ArrayList;
 
 import ua.company.testtask.R;
-import ua.company.testtask.ViewUtil;
+import ua.company.testtask.utils.ViewUtil;
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHolder> {
+public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ItemViewHolder> {
     private ArrayList<String> mImagesUri;
     private Context mContext;
     private int mItemImageWidth;
     private String mTestImagesFolderPath;
 
-    public ImageAdapter(Context context, ArrayList<String> imagesUri) {
+    public GalleryAdapter(Context context, ArrayList<String> imagesUri) {
         mContext = context;
         mImagesUri = imagesUri;
         mItemImageWidth = ViewUtil.getDeviceWidth(context) / 2;
@@ -30,13 +30,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
     }
 
     @Override
-    public ImageAdapter.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GalleryAdapter.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_image, parent, false);
         return new ItemViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(ImageAdapter.ItemViewHolder holder, int position) {
+    public void onBindViewHolder(GalleryAdapter.ItemViewHolder holder, int position) {
         File currentImageFile = new File(mTestImagesFolderPath, mImagesUri.get(position));
         int itemImageHeight = getImageNewHeight(currentImageFile.getAbsolutePath());
         holder.mItemImage.getLayoutParams().height = itemImageHeight;

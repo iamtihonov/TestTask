@@ -5,11 +5,11 @@ import android.support.v4.content.AsyncTaskLoader;
 
 import java.util.ArrayList;
 
-import ua.company.testtask.Car;
-import ua.company.testtask.ServiceClient;
+import ua.company.testtask.data.Car;
+import ua.company.testtask.handlers.ServiceClient;
 
-public class MachinesLoader extends AsyncTaskLoader<ArrayList<Car>> {
-    public MachinesLoader(Context context) {
+public class CarsLoader extends AsyncTaskLoader<ArrayList<Car>> {
+    public CarsLoader(Context context) {
         super(context);
     }
 

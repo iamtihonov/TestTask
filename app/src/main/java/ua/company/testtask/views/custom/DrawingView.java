@@ -1,4 +1,4 @@
-package ua.company.testtask.custom;
+package ua.company.testtask.views.custom;
 
 import android.content.Context;
 import android.graphics.Canvas;

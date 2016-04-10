@@ -1,4 +1,4 @@
-package ua.company.testtask;
+package ua.company.testtask.views.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -6,7 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import ua.company.testtask.adapters.TabsPagerAdapter;
+import ua.company.testtask.R;
+import ua.company.testtask.views.adapters.TabsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

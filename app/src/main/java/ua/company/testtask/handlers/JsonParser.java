@@ -1,10 +1,12 @@
-package ua.company.testtask;
+package ua.company.testtask.handlers;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import ua.company.testtask.data.Car;
 
 public class JsonParser {
     private static final String CARS_TAG = "cars";

@@ -1,4 +1,4 @@
-package ua.company.testtask.adapters;
+package ua.company.testtask.views.adapters;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import ua.company.testtask.R;
-import ua.company.testtask.fragments.DrawingFragment;
-import ua.company.testtask.fragments.GalleryFragment;
-import ua.company.testtask.fragments.ListOfMachinesFragment;
+import ua.company.testtask.views.fragments.DrawingFragment;
+import ua.company.testtask.views.fragments.GalleryFragment;
+import ua.company.testtask.views.fragments.ListOfCarsFragment;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
     private static final int COUNT_TABS_VALUE = 3;
@@ -23,7 +23,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ListOfMachinesFragment();
+                return new ListOfCarsFragment();
 
             case 1:
                 return new DrawingFragment();

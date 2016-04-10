@@ -1,4 +1,4 @@
-package ua.company.testtask;
+package ua.company.testtask.handlers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import ua.company.testtask.data.Car;
 
 public class ServiceClient {
     private static final int TIME_OUT_IN_MILL = 10000;

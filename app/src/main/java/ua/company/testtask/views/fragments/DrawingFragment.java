@@ -1,4 +1,4 @@
-package ua.company.testtask.fragments;
+package ua.company.testtask.views.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import ua.company.testtask.custom.DrawingView;
+import ua.company.testtask.views.custom.DrawingView;
 import ua.company.testtask.data.Point;
 
 public class DrawingFragment extends Fragment {

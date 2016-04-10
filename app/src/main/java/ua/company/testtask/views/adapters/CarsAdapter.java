@@ -1,4 +1,4 @@
-package ua.company.testtask.adapters;
+package ua.company.testtask.views.adapters;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import ua.company.testtask.Car;
+import ua.company.testtask.data.Car;
 import ua.company.testtask.R;
 
 public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.ItemViewHolder> {
