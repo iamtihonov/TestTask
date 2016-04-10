@@ -32,7 +32,7 @@ public class GalleryFragment extends Fragment {
     }
 
     public void initViews(View fragmentView) {
-        RecyclerView recyclerView = (RecyclerView) fragmentView.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) fragmentView.findViewById(R.id.recyclerViewImages);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new ImageAdapter(getActivity(), ViewUtil.getTestImagesName()));

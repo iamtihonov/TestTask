@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
+import ua.company.testtask.AppLog;
 import ua.company.testtask.Car;
 import ua.company.testtask.R;
 import ua.company.testtask.custom.SpaceItemDecoration;
@@ -34,9 +35,9 @@ public class ListOfMachinesFragment extends Fragment
 
     @Override
     public void onAttach(Context context)  {
-        super.onAttach ( context );
+        super.onAttach(context);
 
-        if (context instanceof AppCompatActivity ) {
+        if (context instanceof AppCompatActivity) {
             mActivity = (AppCompatActivity)context;
         }
     }
@@ -61,7 +62,7 @@ public class ListOfMachinesFragment extends Fragment
 
     public void initViews(View fragmentView) {
         mProgressBar = (ProgressBar) fragmentView.findViewById(R.id.progressBar);
-        mRecycleView = (RecyclerView)fragmentView.findViewById(R.id.recyclerView);
+        mRecycleView = (RecyclerView)fragmentView.findViewById(R.id.recyclerViewCars);
 
         mRecycleView.setLayoutManager(new LinearLayoutManager(mActivity));
         mRecycleView.setHasFixedSize(true);
@@ -92,7 +93,9 @@ public class ListOfMachinesFragment extends Fragment
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(RECYCLE_VIEW_STATE_TAG, mRecycleView.getLayoutManager().onSaveInstanceState());
+        if(mRecycleView != null) {
+            outState.putParcelable(RECYCLE_VIEW_STATE_TAG, mRecycleView.getLayoutManager().onSaveInstanceState());
+        }
     }
 
     @Override
