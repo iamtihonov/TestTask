@@ -25,7 +25,6 @@ import ua.company.testtask.loaders.MachinesLoader;
 
 public class ListOfMachinesFragment extends Fragment
         implements LoaderManager.LoaderCallbacks<ArrayList<Car>> {
-
     private static final String RECYCLE_VIEW_STATE_TAG = "recycle_view_state";
 
     private RecyclerView mRecycleView;

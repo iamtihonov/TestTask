@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import ua.company.testtask.R;
 import ua.company.testtask.fragments.DrawingFragment;
-import ua.company.testtask.fragments.ImagesFragment;
+import ua.company.testtask.fragments.GalleryFragment;
 import ua.company.testtask.fragments.ListOfMachinesFragment;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
@@ -29,7 +29,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
                 return new DrawingFragment();
 
             case 2:
-                return new ImagesFragment();
+                return new GalleryFragment();
 
             default:
                 return null;
