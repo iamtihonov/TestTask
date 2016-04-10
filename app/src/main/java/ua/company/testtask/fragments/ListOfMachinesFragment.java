@@ -17,7 +17,6 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
-import ua.company.testtask.AppLog;
 import ua.company.testtask.Car;
 import ua.company.testtask.R;
 import ua.company.testtask.custom.SpaceItemDecoration;

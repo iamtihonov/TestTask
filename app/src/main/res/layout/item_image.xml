@@ -5,6 +5,6 @@
     android:id="@+id/itemImage"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:src="@mipmap/ic_launcher"
+    tools:src="@drawable/image_placeholder"
     android:adjustViewBounds="true"
     android:contentDescription="@string/content_description_1" />

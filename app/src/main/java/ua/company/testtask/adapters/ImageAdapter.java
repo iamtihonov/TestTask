@@ -42,7 +42,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
         holder.mItemImage.getLayoutParams().height = itemImageHeight;
 
         Picasso.with(mContext).load(currentImageFile).resize(mItemImageWidth, itemImageHeight).
-                into(holder.mItemImage);
+                placeholder(R.drawable.image_placeholder).into(holder.mItemImage);
     }
 
     public int getImageNewHeight(String path) {
