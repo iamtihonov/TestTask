@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabs_name">
+        <item>Перввый</item>
+        <item>Второй</item>
+        <item>Третий</item>
+    </string-array>
+</resources>
