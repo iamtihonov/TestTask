@@ -14,7 +14,7 @@ public class ServiceClient {
     private static final int TIME_OUT_IN_MILL = 10000;
     private static final String GET_REQUEST_TAG = "GET";
 
-    public static final String LOAD_CARS_URL = "https://www.dropbox.com/s/6bcldgdhxa6mlk3/cars.json?dl=1&pv=1";
+    public static final String LOAD_CARS_URL = "https://www.dropbox.com/s/o18kagor849igu4/cars.json?dl=1&pv=1";
 
     public static String sendGetRequest(String urlToRead) {
         URL url;
