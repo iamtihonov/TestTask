@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -16,4 +17,16 @@
         android:id="@+id/progressBar"
         android:layout_gravity="center"
         style="@style/WrapContentStyle"/>
+
+    <TextView
+        android:id="@+id/textDataNotLoaded"
+        android:text="@string/data_not_loaded"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="22sp"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        tools:visibility="visible"
+        style="@style/WrapContentStyle" />
 </FrameLayout>

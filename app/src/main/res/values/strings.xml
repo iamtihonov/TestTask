@@ -5,6 +5,7 @@
     <string name="car_model">Модель: %1$s</string>
     <string name="car_year">Год: %1$s</string>
     <string name="car_color">Цвет: %1$s</string>
+    <string name="data_not_loaded">Не удалось загрузить данные, возможно у вас не включен интернет</string>
     <string name="content_description_1">Изображение из папки</string>
 
     <plurals name="car_price">

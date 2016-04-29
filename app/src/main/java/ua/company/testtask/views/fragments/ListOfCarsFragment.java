@@ -13,7 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -28,9 +27,10 @@ public class ListOfCarsFragment extends Fragment
     private static final String RECYCLE_VIEW_STATE_TAG = "recycle_view_state";
 
     private RecyclerView mRecycleView;
-    private ProgressBar mProgressBar;
+    private View mProgressBar;
     private AppCompatActivity mActivity;
     private Parcelable mSavedRecyclerLayoutState;
+    private View mTextDataNotLoaded;
 
     @Override
     public void onAttach(Context context)  {
@@ -60,8 +60,9 @@ public class ListOfCarsFragment extends Fragment
     }
 
     public void initViews(View fragmentView) {
-        mProgressBar = (ProgressBar) fragmentView.findViewById(R.id.progressBar);
         mRecycleView = (RecyclerView)fragmentView.findViewById(R.id.recyclerViewCars);
+        mProgressBar = fragmentView.findViewById(R.id.progressBar);
+        mTextDataNotLoaded = fragmentView.findViewById(R.id.textDataNotLoaded);
 
         mRecycleView.setLayoutManager(new LinearLayoutManager(mActivity));
         mRecycleView.setHasFixedSize(true);
@@ -79,11 +80,14 @@ public class ListOfCarsFragment extends Fragment
         changeVisibilityList(true);
 
         if(cars != null) {
+            mTextDataNotLoaded.setVisibility(View.GONE);
             mRecycleView.setAdapter(new CarsAdapter(mActivity, cars));
 
             if(mSavedRecyclerLayoutState != null) {
                 mRecycleView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
             }
+        } else {
+            mTextDataNotLoaded.setVisibility(View.VISIBLE);
         }
     }
 
