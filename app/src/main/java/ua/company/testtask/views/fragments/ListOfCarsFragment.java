@@ -56,7 +56,7 @@ public class ListOfCarsFragment extends Fragment
         }
 
         initViews(fragmentView);
-        mActivity.getSupportLoaderManager().initLoader(1, null, this).forceLoad();
+        mActivity.getSupportLoaderManager().initLoader(1, null, this);
     }
 
     public void initViews(View fragmentView) {
@@ -77,12 +77,18 @@ public class ListOfCarsFragment extends Fragment
     @Override
     public void onLoadFinished(Loader<ArrayList<Car>> loader, ArrayList<Car> cars) {
         changeVisibilityList(true);
-        mRecycleView.setAdapter(new CarsAdapter(mActivity, cars));
 
-        if(mSavedRecyclerLayoutState != null) {
-            mRecycleView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
+        if(cars != null) {
+            mRecycleView.setAdapter(new CarsAdapter(mActivity, cars));
+
+            if(mSavedRecyclerLayoutState != null) {
+                mRecycleView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
+            }
         }
     }
+
+    @Override
+    public void onLoaderReset(Loader<ArrayList<Car>> loader) {}
 
     public void changeVisibilityList(boolean isShow) {
         mProgressBar.setVisibility(isShow ? View.GONE : View.VISIBLE);
@@ -96,9 +102,6 @@ public class ListOfCarsFragment extends Fragment
             outState.putParcelable(RECYCLE_VIEW_STATE_TAG, mRecycleView.getLayoutManager().onSaveInstanceState());
         }
     }
-
-    @Override
-    public void onLoaderReset(Loader<ArrayList<Car>> loader) {}
 
     @Override
     public void onDetach() {

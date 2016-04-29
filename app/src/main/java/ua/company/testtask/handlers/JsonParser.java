@@ -34,10 +34,10 @@ public class JsonParser {
                 cars.add(new Car(modelName, year, color, price));
             }
 
+            return cars;
         } catch (JSONException e) {
             e.printStackTrace();
+            return null;
         }
-
-        return cars;
     }
 }

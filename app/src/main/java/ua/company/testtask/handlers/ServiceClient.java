@@ -7,7 +7,6 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
-
 import ua.company.testtask.data.Car;
 
 public class ServiceClient {
@@ -38,14 +37,16 @@ public class ServiceClient {
                     }
                     rd.close();
             }
+
+            return result.toString();
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-        return result.toString();
     }
 
     public static ArrayList<Car> loadCars() {
         String response = sendGetRequest(LOAD_CARS_URL);
-        return JsonParser.parseCars(response);
+        return response != null ? JsonParser.parseCars(response) : null;
     }
 }
