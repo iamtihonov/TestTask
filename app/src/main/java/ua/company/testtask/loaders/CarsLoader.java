@@ -12,12 +12,15 @@ import java.util.ArrayList;
 import ua.company.testtask.data.Car;
 import ua.company.testtask.handlers.ServiceClient;
 import ua.company.testtask.utils.InternetUtil;
+import ua.company.testtask.views.CarsLoaderRunningListener;
 
 public class CarsLoader extends AsyncTaskLoader<ArrayList<Car>> {
     private ArrayList<Car> mLoadedCars;
     private BroadcastReceiver mNetworkStateReceiver;
-    public CarsLoader(Context context) {
+    private CarsLoaderRunningListener mListener;
+    public CarsLoader(Context context, CarsLoaderRunningListener listener) {
         super(context);
+        mListener = listener;
     }
 
     @Override
@@ -59,6 +62,7 @@ public class CarsLoader extends AsyncTaskLoader<ArrayList<Car>> {
     public class NetworkStateReceiver extends BroadcastReceiver {
         public void onReceive(Context context, Intent intent) {
             if(InternetUtil.deviceIsOnline(context)) {
+                mListener.carsLoaderRunning();
                 onContentChanged();
             }
         }
@@ -75,6 +79,10 @@ public class CarsLoader extends AsyncTaskLoader<ArrayList<Car>> {
 
         if (mLoadedCars != null) {
             mLoadedCars = null;
+        }
+
+        if(mListener != null) {
+            mListener = null;
         }
 
         unregisterReceiverIfNeed();

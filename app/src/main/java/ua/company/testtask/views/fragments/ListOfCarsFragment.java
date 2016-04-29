@@ -18,12 +18,13 @@ import java.util.ArrayList;
 
 import ua.company.testtask.data.Car;
 import ua.company.testtask.R;
+import ua.company.testtask.views.CarsLoaderRunningListener;
 import ua.company.testtask.views.custom.SpaceItemDecoration;
 import ua.company.testtask.views.adapters.CarsAdapter;
 import ua.company.testtask.loaders.CarsLoader;
 
 public class ListOfCarsFragment extends Fragment
-        implements LoaderManager.LoaderCallbacks<ArrayList<Car>> {
+        implements LoaderManager.LoaderCallbacks<ArrayList<Car>>, CarsLoaderRunningListener {
     private static final String RECYCLE_VIEW_STATE_TAG = "recycle_view_state";
 
     private RecyclerView mRecycleView;
@@ -71,32 +72,35 @@ public class ListOfCarsFragment extends Fragment
 
     @Override
     public Loader<ArrayList<Car>> onCreateLoader(int id, Bundle args) {
-        changeVisibilityList(false);
-        return new CarsLoader(mActivity);
+        return new CarsLoader(mActivity, ListOfCarsFragment.this);
     }
 
     @Override
     public void onLoadFinished(Loader<ArrayList<Car>> loader, ArrayList<Car> cars) {
-        changeVisibilityList(true);
-
         if(cars != null) {
-            mTextDataNotLoaded.setVisibility(View.GONE);
+            changeVisibilityViews(true, false);
             mRecycleView.setAdapter(new CarsAdapter(mActivity, cars));
 
             if(mSavedRecyclerLayoutState != null) {
                 mRecycleView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
             }
         } else {
-            mTextDataNotLoaded.setVisibility(View.VISIBLE);
+            changeVisibilityViews(false, true);
         }
     }
 
     @Override
     public void onLoaderReset(Loader<ArrayList<Car>> loader) {}
 
-    public void changeVisibilityList(boolean isShow) {
-        mProgressBar.setVisibility(isShow ? View.GONE : View.VISIBLE);
-        mRecycleView.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    @Override
+    public void carsLoaderRunning() {
+        changeVisibilityViews(false, false);
+    }
+
+    public void changeVisibilityViews(boolean showList, boolean showTextDataNotLoaded) {
+        mProgressBar.setVisibility(showList || showTextDataNotLoaded ? View.GONE : View.VISIBLE);
+        mRecycleView.setVisibility(showList ? View.VISIBLE : View.GONE);
+        mTextDataNotLoaded.setVisibility(showTextDataNotLoaded ? View.VISIBLE : View.GONE);
     }
 
     @Override
